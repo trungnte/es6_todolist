@@ -1,7 +1,10 @@
 export default class ToDo {
-    constructor (id, content, status) {
-        this.id = id;
+    constructor (content, status) {
         this.content = content;
         this.status = status;
+    }
+
+    getTaskContent = () => {
+        return this.content;
     }
 }
