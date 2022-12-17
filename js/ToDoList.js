@@ -36,11 +36,17 @@ export default class ToDoList {
         return content;
     }
 
-    updateToDo(obj) {
-        console.log(obj)
-    }
-
     sortToDoList = (isDES) => {
+        this.toDoArray.sort((task, nextTask) => {
+            const taskCtx = task.getTaskContent().toLowerCase();
+            const nextTaskCtx = nextTask.getTaskContent().toLowerCase();
+            // console.log(taskCtx, nextTaskCtx);
+            return nextTaskCtx.localeCompare(taskCtx);
+        });
+        // console.log( this.toDoArray);
 
+        if(isDES) {
+            this.toDoArray.reverse();
+        }
     }
 }

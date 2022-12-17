@@ -76,3 +76,19 @@ const displayTaskList = () => {
 
 
 displayTaskList();
+
+
+window.sortDesc = () => {
+    todoList.sortToDoList(0);
+    completedList.sortToDoList(0);
+    displayTaskList();
+}
+
+window.sortAsc = () => {
+    todoList.sortToDoList(1);
+    completedList.sortToDoList(1);
+    displayTaskList();
+}
+
+document.querySelector("#two").onclick = sortAsc;
+document.querySelector("#three").onclick = sortDesc;
